@@ -20,6 +20,7 @@ This project is built with **Angular version 16.2.16 ** and requires **Node vers
 
 - **Angular 16.2.16** (core framework)
 - **Angular animations 16.2.12** (core framework)
+- **"gsap 3.13.0** (for 3D animation)
 - **RxJS** (reactive programming)
 - **Angular Forms** (`ReactiveFormsModule`, `FormsModule`)
 - **Angular Router** (`@angular/router`)

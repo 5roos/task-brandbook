@@ -1,16 +1,18 @@
 <div class="menu-container" [@fadeInOut]>
   <ul class="menu-items" [class.active]="menuOpen" [@fadeInOut]>
-    <li  *ngFor="let item of menuItems; let i = index; trackBy: trackByFn" [style.transform]="getItemStyle(i)"
+    <li *ngFor="let item of menuItems; let i = index; trackBy: trackByFn" [style.transform]="getItemStyle(i)"
       [attr.data-label]="item.label" [@fadeInOut]>
-      <div  (click)="navigateTo(item.route)">
-        <span  class="material-icons">{{ item.icon }}</span>
+      <div (click)="navigateTo(item.route)">
+        <span #menuIcon class="material-icons">{{ item.icon }}</span>
       </div>
     </li>
   </ul>
-  <button  class="menu-button" [@fadeInOut]="menuOpen ? 'menu-open' : 'menu-closed'"
+
+  <button #menuButton class="menu-button" [@fadeInOut]="menuOpen ? 'menu-open' : 'menu-closed'"
     [ngClass]="menuOpen ? 'menu-open' : 'menu-closed'" (click)="toggleMenu()">
-    <span  class="material-icons main-menu-icon">
+    <span class="material-icons main-menu-icon">
       {{ menuOpen ? 'close' : 'menu' }}
     </span>
   </button>
+
 </div>
