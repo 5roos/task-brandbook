@@ -1,0 +1,11 @@
+<div class="menu-container">
+  <button class="menu-button" (click)="toggleMenu()">
+    <span class="material-icons">menu</span>
+  </button>
+  <div class="menu-items" [class.open]="menuOpen">
+    <button *ngFor="let item of menuItems; let i = index"
+            [style.transform]="getItemTransform(i)">
+      <span class="material-icons">{{ item.icon }}</span>
+    </button>
+  </div>
+</div>
