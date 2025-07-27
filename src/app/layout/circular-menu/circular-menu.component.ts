@@ -4,38 +4,23 @@ import {trigger, transition, style, animate, state,} from '@angular/animations';
   selector: 'app-circular-menu',
   templateUrl: './circular-menu.component.html',
   styleUrls: ['./circular-menu.component.scss'],
-  animations: [
-    trigger('fadeInOut', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'scale(0.8)' }),
-        animate(
-          '300ms cubic-bezier(0.25, 0.8, 0.25, 1)',
-          style({ opacity: 1, transform: 'scale(1)' })
-        ),
-      ]),
-      transition(':leave', [
-        animate(
-          '200ms ease-in',
-          style({ opacity: 0, transform: 'scale(0.8)' })
-        ),
-      ]),
+ animations: [
+  trigger('fadeInOut', [
+    transition(':enter', [
+      style({ opacity: 0, transform: 'scale(0.5)' }),
+      animate(
+        '400ms ease-out',
+        style({ opacity: 1, transform: 'scale(1)' })
+      )
     ]),
-    trigger('rotateButton', [
-      state(
-        'menu-closed',
-        style({
-          transform: 'rotate(0deg) scale(1)',
-        })
-      ),
-      state(
-        'menu-open',
-        style({
-          transform: 'rotate(135deg) scale(1.1)',
-        })
-      ),
-      transition('menu-closed <=> menu-open', [animate('300ms ease-in-out')]),
-    ]),
-  ],
+    transition(':leave', [
+      animate(
+        '300ms ease-in',
+        style({ opacity: 0, transform: 'scale(0.5)' })
+      )
+    ])
+  ])
+]
 })
 export class CircularMenuComponent {
   menuOpen = false;
@@ -61,4 +46,9 @@ export class CircularMenuComponent {
     let y = -radius * Math.sin(angle * index);
     return `translate(${x}px, ${y}px)`;
   }
+
+  trackByFn(index: number, item: any): number {
+  return index;
+ }
+
 }

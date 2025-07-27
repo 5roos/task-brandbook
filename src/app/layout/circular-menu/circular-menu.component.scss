@@ -8,8 +8,8 @@
 .menu-button {
   border: none;
   border-radius: 50%;
-  width: 55px;
-  height: 55px;
+  width: 47px;
+  height: 47px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,11 +21,13 @@
   transition: background-color 0.3s, color 0.3s;
 
   .material-icons {
-    font-size: 28px;
+    font-size: 22px;
     transition: color 0.3s;
   }
 
   &.menu-closed {
+    width: 47px;
+    height: 47px;
     background-color: #ffffff;
     .main-menu-icon {
       color: #6c63ff;
@@ -33,6 +35,8 @@
   }
 
   &.menu-open {
+    width: 47px;
+    height: 47px;
     background-color: #ff4d4f;
     .main-menu-icon {
       color: #fff;
@@ -51,7 +55,9 @@
   transition: all 0.3s ease-in-out;
 
   li {
+    list-style: none;
     position: absolute;
+    will-change: transform, opacity;
     width: 50px;
     height: 50px;
     background-color: #ffffff;
