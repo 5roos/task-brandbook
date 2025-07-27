@@ -1,12 +1,13 @@
 <div class="menu-container">
-  <ul class="menu-items" [class.active]="menuOpen">
-    <li *ngFor="let item of menuItems; let i = index" [style.transform]="getItemStyle(i)" [@fadeInOut]>
-      <span class="material-icons">{{ item.icon }}</span>
-    </li>
-  </ul>
+<ul class="menu-items" [class.active]="menuOpen">
+  <li *ngFor="let item of menuItems; let i = index" [style.transform]="getItemStyle(i)" [attr.data-label]="item.label" [@fadeInOut]>
+    <span class="material-icons">{{ item.icon }}</span>
+  </li>
+</ul>
+
 
 <button class="menu-button" [ngClass]="menuOpen ? 'menu-open' : 'menu-closed'" (click)="toggleMenu()">
-  <span class="material-icons main-menu-icon">
+  <span  class="material-icons main-menu-icon">
     {{ menuOpen ? 'close' : 'menu' }}
   </span>
 </button>
