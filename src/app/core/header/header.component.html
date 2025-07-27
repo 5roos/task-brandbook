@@ -1,3 +1,27 @@
 <div class="header">
-  <h1>{{ title }}</h1>
+  <div class="left-section">
+    <h1>{{ title }}</h1>
+  </div>
+
+  <div class="center-section">
+    <div class="search-container">
+      <input type="text" [(ngModel)]="searchQuery" placeholder="Search..." />
+      <button (click)="onSearch()">
+        <span class="material-icons">search</span>
+      </button>
+    </div>
+
+    <select [(ngModel)]="selectedCategory">
+      <option value="">All</option>
+      <option value="news">News</option>
+      <option value="blog">Blog</option>
+      <option value="updates">Updates</option>
+    </select>
+  </div>
+
+  <div class="right-section">
+    <span class="material-icons">notifications</span>
+    <span class="material-icons">settings</span>
+    <span class="material-icons">account_circle</span>
+  </div>
 </div>

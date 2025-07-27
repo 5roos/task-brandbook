@@ -1,0 +1,28 @@
+<div class="project-wrapper">
+  <div class="form-card">
+    <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+      <h2>{{ editing ? 'Update Project' : 'Add Project' }}</h2>
+
+      <input type="text" formControlName="name" placeholder="Project Name" />
+      <textarea formControlName="description" placeholder="Project Description"></textarea>
+
+      <div class="form-actions">
+        <button class="clear-button" style="margin-right: 10px;" (click)="clearForm()">Clear</button>
+        <button class="main-button" type="submit">{{ editing ? 'Update' : 'Add' }}</button>
+      </div>
+    </form>
+  </div>
+
+  <ul class="project-list">
+    <li *ngFor="let item of projects" class="project-item">
+      <div class="project-info">
+        <h3>{{ item?.name }}</h3>
+        <p>{{ item?.description }}</p>
+      </div>
+      <div class="actions">
+        <button class="edit-btn" (click)="edit(item)">Edit</button>
+        <button class="delete-btn" (click)="delete(item.id)">Delete</button>
+      </div>
+    </li>
+  </ul>
+</div>

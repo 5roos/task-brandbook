@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {trigger, transition, style, animate, state,} from '@angular/animations';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-circular-menu',
   templateUrl: './circular-menu.component.html',
@@ -24,15 +25,15 @@ import {trigger, transition, style, animate, state,} from '@angular/animations';
 })
 export class CircularMenuComponent {
   menuOpen = false;
+  constructor(private router: Router) {}
 
   menuItems = [
-    { icon: 'home', label: 'Home' },
-    { icon: 'group', label: 'Staff List' },
-    { icon: 'person_add', label: 'Add Staff' },
-    { icon: 'school', label: 'Student List' },
-    { icon: 'person_add_alt', label: 'Add Student' },
+    { icon: 'home', label: 'Home', route: '/home' },
+    { icon: 'api', label: 'API Posts', route: '/module/api-posts' },
+    { icon: 'folder', label: 'Projects', route: '/module/projects' },
+    { icon: 'group', label: 'Staff List', route: '/staff-list' },
+    { icon: 'person_add', label: 'Add Staff', route: '/add-staff' },
   ];
-
   public toggleMenu(): void {
     this.menuOpen = !this.menuOpen;
   }
@@ -50,5 +51,10 @@ export class CircularMenuComponent {
   trackByFn(index: number, item: any): number {
   return index;
  }
+
+navigateTo(route: string) {
+  this.menuOpen = false; 
+  this.router.navigateByUrl(route);
+}
 
 }

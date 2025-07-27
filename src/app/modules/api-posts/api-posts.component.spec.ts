@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CrudComponent } from './crud.component';
+import { ApiPostsComponent } from './api-posts.component';
 
-describe('CrudComponent', () => {
-  let component: CrudComponent;
-  let fixture: ComponentFixture<CrudComponent>;
+describe('ApiPostsComponent', () => {
+  let component: ApiPostsComponent;
+  let fixture: ComponentFixture<ApiPostsComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CrudComponent]
+      declarations: [ApiPostsComponent]
     });
-    fixture = TestBed.createComponent(CrudComponent);
+    fixture = TestBed.createComponent(ApiPostsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

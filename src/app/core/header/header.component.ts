@@ -9,6 +9,8 @@ import { filter, map, mergeMap } from 'rxjs';
 })
 export class HeaderComponent {
   title: string = 'Home';
+  searchQuery: string = '';
+  selectedCategory: string = '';
 
   constructor(private router: Router, private route: ActivatedRoute) {}
 
@@ -26,5 +28,9 @@ export class HeaderComponent {
       .subscribe((data) => {
         this.title = data['title'];
       });
+  }
+
+  public onSearch() {
+    console.log('Search:', this.searchQuery, 'Category:', this.selectedCategory);
   }
 }

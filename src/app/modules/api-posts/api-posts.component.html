@@ -1,0 +1,28 @@
+<div class="post-wrapper">
+  <h2>Fake API Posts</h2>
+
+  <form [formGroup]="postForm" (ngSubmit)="onSubmit()" class="post-form">
+    <div class="form-group">
+      <input formControlName="title" placeholder="Title" />
+    </div>
+    <div class="form-group">
+      <input formControlName="body" placeholder="Body" />
+    </div>
+    <div class="form-actions">
+      <button class="clear-button" style="margin-right: 10px;" (click)="clearForm()">Clear</button>
+      <button type="submit">{{ editing ? 'Update' : 'Add' }}</button>
+    </div>
+  </form>
+
+  <ul class="post-list">
+    <li *ngFor="let post of posts" class="post-item">
+      <div class="post-content">
+        <strong>{{ post.title }}</strong>: {{ post.body }}
+      </div>
+      <div class="post-actions">
+        <button (click)="edit(post)">Edit</button>
+        <button (click)="delete(post.id!)">Delete</button>
+      </div>
+    </li>
+  </ul>
+</div>
