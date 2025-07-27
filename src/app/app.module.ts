@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { CrudComponent } from './modules/crud/crud.component';
-import { AnimationComponent } from './modules/animation/animation.component';
 import { HomePageComponent } from './core/home-page/home-page.component';
 import { CircularMenuComponent } from './layout/circular-menu/circular-menu.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,13 +16,13 @@ import { CircularMenuComponent } from './layout/circular-menu/circular-menu.comp
     HeaderComponent,
     FooterComponent,
     CrudComponent,
-    AnimationComponent,
     HomePageComponent,
     CircularMenuComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule // for angular animations
   ],
   providers: [],
   bootstrap: [AppComponent]

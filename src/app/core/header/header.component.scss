@@ -1,6 +1,10 @@
-header {
-  padding: 1rem;
-  background: #222;
+.header {
+  height: 45px;
+  background-color: #000;
   color: #fff;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  font-size: .8rem;
+  padding: 0 16px;
+  box-sizing: border-box;
 }
